@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دليلك لأفضل أدوات الذكاء الاصطناعي والإنتاجية</title>
+    <style>
+        :root {
+            --bg-dark: #0F172A;
+            --card-bg: #1E293B;
+            --accent-color: #38BDF8; /* أزرق ذكي */
+            --text-light: #F8FAFC;
+            --text-muted: #94A3B8;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            margin: 0; padding: 15px;
+            padding-bottom: 80px; /* مساحة للزر العائم */
+        }
+
+        header {
+            text-align: center; padding: 30px 10px;
+        }
+
+        header h1 { font-size: 26px; color: var(--accent-color); margin-bottom: 10px; }
+        header p { color: var(--text-muted); font-size: 15px; max-width: 500px; margin: 0 auto; line-height: 1.6; }
+
+        /* حاوية الإعلانات العلوية */
+        .ad-space {
+            max-width: 600px; margin: 15px auto;
+            min-height: 90px; background: rgba(255,255,255,0.02);
+            border: 1px dashed rgba(255,255,255,0.1);
+            border-radius: 12px; display: flex; align-items: center; justify-content: center;
+        }
+
+        /* شبكة كروت المراجعات */
+        .grid {
+            display: grid; grid-template-columns: 1fr; gap: 20px;
+            max-width: 600px; margin: 0 auto;
+        }
+
+        @media(min-width: 480px) {
+            .grid { grid-template-columns: 1fr; }
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 16px; padding: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .badge {
+            background: rgba(56, 189, 248, 0.1); color: var(--accent-color);
+            padding: 5px 10px; border-radius: 50px; font-size: 12px; font-weight: bold;
+        }
+
+        .card h2 { font-size: 20px; margin: 12px 0 8px 0; }
+        .rating { color: #F59E0B; font-size: 14px; margin-bottom: 10px; }
+        .card p { color: var(--text-muted); font-size: 14px; line-height: 1.6; margin-bottom: 15px; }
+
+        .review-link {
+            display: inline-block; width: 100%; text-align: center;
+            background-color: var(--accent-color); color: #0F172A;
+            padding: 12px; border-radius: 10px; font-weight: bold;
+            text-decoration: none; box-sizing: border-box;
+            touch-action: manipulation;
+        }
+
+        /* الزر العائم اللمسي المخصص للهواتف */
+        .floating-btn {
+            position: fixed; bottom: 20px; left: 20px;
+            background-color: #10B981; color: white; /* أخضر مميز */
+            border: none; border-radius: 50px;
+            padding: 15px 25px; font-size: 15px; font-weight: bold;
+            box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3);
+            cursor: pointer; z-index: 1000;
+            display: flex; align-items: center; gap: 8px;
+            text-decoration: none; box-sizing: border-box;
+            touch-action: manipulation; transition: transform 0.1s;
+        }
+
+        .floating-btn:active { transform: scale(0.95); }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>دليل أدوات الذكاء الاصطناعي</h1>
+        <p>مراجعات صادقة وتقييمات سريعة لأدوات الذكاء الاصطناعي والإنتاجية التي ستوفر عليك ساعات من العمل اليومي.</p>
+    </header>
+
+    <div class="ad-space">
+        <span style="color: var(--text-muted); font-size: 12px;">مساحة إعلانية</span>
+    </div>
+
+    <div class="grid">
+        
+        <div class="card">
+            <span class="badge">إنتاجية وتنظيم</span>
+            <h2>Notion AI</h2>
+            <div class="rating">⭐⭐⭐⭐⭐ (5/5)</div>
+            <p>من أقوى الأدوات لتنظيم الملاحظات والمشاريع. دمج الذكاء الاصطناعي فيه يجعله قادراً على تلخيص كشوفات العمل، وكتابة المسودات، وترتيب جداولك تلقائياً وبذكاء شديد.</p>
+            <a href="#" class="review-link">تجرّب الأداة من هنا</a>
+        </div>
+
+        <div class="card">
+            <span class="badge">صناعة المحتوى</span>
+            <h2>ChatGPT Plus</h2>
+            <div class="rating">⭐⭐⭐⭐★ (4.5/5)</div>
+            <p>المساعد الشخصي الذي لا غنى عنه. ممتاز جداً في كتابة المقالات، البرمجة، والبحث السريع. يعيبه فقط أن النسخة المجانية قد تكون بطيئة وقت الذروة.</p>
+            <a href="#" class="review-link">تجرّب الأداة من هنا</a>
+        </div>
+
+    </div>
+
+    <div class="ad-space" style="margin-top: 30px;">
+        <span style="color: var(--text-muted); font-size: 12px;">مساحة إعلانية</span>
+    </div>
+
+    <a href="https://t.me/your_username" target="_blank" class="floating-btn">
+        <span>💬 اقترح أداة جديدة</span>
+    </a>
+
+</body>
+</html>

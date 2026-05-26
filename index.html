@@ -9,6 +9,7 @@
             --bg-dark: #0F172A;
             --card-bg: #1E293B;
             --accent-color: #38BDF8; /* أزرق ذكي */
+            --featured-color: #A78BFA; /* بنفسجي للأداة المميزة */
             --text-light: #F8FAFC;
             --text-muted: #94A3B8;
         }
@@ -18,22 +19,178 @@
             background-color: var(--bg-dark);
             color: var(--text-light);
             margin: 0; padding: 15px;
-            padding-bottom: 80px; /* مساحة للزر العائم */
+            padding-bottom: 80px;
         }
 
-        header {
-            text-align: center; padding: 30px 10px;
-        }
-
+        header { text-align: center; padding: 25px 10px; }
         header h1 { font-size: 26px; color: var(--accent-color); margin-bottom: 10px; }
         header p { color: var(--text-muted); font-size: 15px; max-width: 500px; margin: 0 auto; line-height: 1.6; }
 
-        /* حاوية الإعلانات العلوية */
+        .section-title {
+            max-width: 600px; margin: 25px auto 15px auto;
+            font-size: 18px; color: var(--accent-color);
+            display: flex; align-items: center; gap: 8px;
+        }
+
+        /* حاوية الإعلانات */
         .ad-space {
             max-width: 600px; margin: 15px auto;
             min-height: 90px; background: rgba(255,255,255,0.02);
             border: 1px dashed rgba(255,255,255,0.1);
             border-radius: 12px; display: flex; align-items: center; justify-content: center;
+        }
+
+        .grid {
+            display: grid; grid-template-columns: 1fr; gap: 20px;
+            max-width: 600px; margin: 0 auto;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 16px; padding: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            border: 1px solid rgba(255,255,255,0.05);
+            position: relative;
+        }
+
+        /* كارت أداة اليوم المميز */
+        .card.featured {
+            border: 2px solid var(--featured-color);
+            background: linear-gradient(145deg, #1E293B, #1E1B4B);
+        }
+
+        .badge {
+            background: rgba(56, 189, 248, 0.1); color: var(--accent-color);
+            padding: 5px 12px; border-radius: 50px; font-size: 12px; font-weight: bold;
+        }
+        .card.featured .badge {
+            background: rgba(167, 139, 250, 0.2); color: var(--featured-color);
+        }
+
+        .card h2 { font-size: 20px; margin: 12px 0 8px 0; }
+        .rating { color: #F59E0B; font-size: 14px; margin-bottom: 10px; }
+        .card p { color: var(--text-muted); font-size: 14px; line-height: 1.6; margin-bottom: 15px; }
+
+        .review-link {
+            display: inline-block; width: 100%; text-align: center;
+            background-color: var(--accent-color); color: #0F172A;
+            padding: 12px; border-radius: 10px; font-weight: bold;
+            text-decoration: none; box-sizing: border-box;
+            touch-action: manipulation;
+        }
+        .card.featured .review-link {
+            background-color: var(--featured-color);
+        }
+
+        .floating-btn {
+            position: fixed; bottom: 20px; left: 20px;
+            background-color: #10B981; color: white;
+            border: none; border-radius: 50px;
+            padding: 15px 25px; font-size: 15px; font-weight: bold;
+            box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3);
+            cursor: pointer; z-index: 1000;
+            display: flex; align-items: center; gap: 8px;
+            text-decoration: none; box-sizing: border-box;
+            touch-action: manipulation; transition: transform 0.1s;
+        }
+        .floating-btn:active { transform: scale(0.95); }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>دليل أدوات الذكاء الاصطناعي اليومي</h1>
+        <p>مراجعات يومية متجددة تلقائياً لأقوى أدوات الإنتاجية، التصميم، وصناعة المحتوى.</p>
+    </header>
+
+    <div class="ad-space">
+        <span style="color: var(--text-muted); font-size: 12px;">مساحة إعلانية</span>
+    </div>
+
+    <div class="section-title">✨ أداة اليوم المميزة (تتجدد تلقائياً كل 24 ساعة)</div>
+    <div class="grid" style="margin-bottom: 25px;">
+        <div class="card featured" id="featured-card">
+            </div>
+    </div>
+
+    <div class="ad-space">
+        <span style="color: var(--text-muted); font-size: 12px;">مساحة إعلانية</span>
+    </div>
+
+    <div class="section-title">🔥 أدوات ننصح بها هذا الأسبوع</div>
+    <div class="grid">
+        <div class="card">
+            <span class="badge">عروض تقديمة وتصميم</span>
+            <h2>Gamma App</h2>
+            <div class="rating">⭐⭐⭐⭐⭐ (5/5)</div>
+            <p>أداة مذهلة لصناعة العروض التقديمية (Presentations) والمستعرضات في ثوانٍ. فقط اكتب فكرتك وسيقوم بتوليد ملف كامل منسق ومملوء بالصور بدلاً من إضاعة ساعات في PowerPoint.</p>
+            <a href="#" class="review-link">تجرّب Gamma من هنا</a>
+        </div>
+
+        <div class="card">
+            <span class="badge">تعديل وصناعة الفيديو</span>
+            <h2>Runway (Gen-2)</h2>
+            <div class="rating">⭐⭐⭐⭐★ (4.7/5)</div>
+            <p>من رواد تحويل النصوص والتشكيلات إلى مقاطع فيديو سينمائية حقيقية. ممتاز جداً لصناع المحتوى على تيك توك ويوتيوب الذين يريدون لقطات خيالية فريدة.</p>
+            <a href="#" class="review-link">تجرّب Runway من هنا</a>
+        </div>
+    </div>
+
+    <div class="ad-space" style="margin-top: 30px;">
+        <span style="color: var(--text-muted); font-size: 12px;">مساحة إعلانية</span>
+    </div>
+
+    <a href="https://t.me/your_username" target="_blank" class="floating-btn">
+        <span>💬 اقترح أداة جديدة</span>
+    </a>
+
+    <script>
+        const dailyTools = [
+            {
+                category: "توليد وتصميم الصور",
+                name: "Leonardo AI",
+                rating: "⭐⭐⭐⭐⭐ (5/5)",
+                desc: "أقوى بديل مجاني لـ Midjourney. يتيح لك توليد صور فائقة الواقعية، شعارات (Logos)، وتصاميم لملابسك أو ألعابك باستخدام نماذج ذكاء اصطناعي متطورة وبواجهة سهلة من الهاتف.",
+                link: "#"
+            },
+            {
+                category: "هندسة الصوت والتعليق",
+                name: "ElevenLabs",
+                rating: "⭐⭐⭐⭐⭐ (4.9/5)",
+                desc: "الملك بلا منازع في تحويل النصوص إلى تعليق صوتي (Voiceover) احترافي وبشري 100%. يدعم اللغة العربية بلهجات متعددة ونبرات صوتية مليئة بالمشاعر وتكاد لا تفرقها عن البشر.",
+                link: "#"
+            },
+            {
+                category: "البحث الذكي المطور",
+                name: "Perplexity AI",
+                rating: "⭐⭐⭐⭐★ (4.8/5)",
+                desc: "البديل الذكي لمحرك بحث جوجل التقليدي. بدلاً من إعطائك روابط زرقاء، يقرأ الإنترنت بالكامل ويعطيك إجابة ملخصة وموثقة بالمصادر مع تحديثات حية لكل ما يحدث في العالم الآن.",
+                link: "#"
+            },
+            {
+                category: "البرمجة وتصميم الواجهات",
+                name: "v0.dev",
+                rating: "⭐⭐⭐⭐⭐ (5/5)",
+                desc: "أداة سحرية للمطورين والمصممين المبتدئين. تصف له الواجهة أو الموقع الذي تريده باللغة العادية، ليقوم ببناء الأكواد البرمجية النظيفة أمامك فوراً وجاهزة للنسخ والاستخدام.",
+                link: "#"
+            }
+        ];
+
+        // معادلة برمجية تختار أداة بناءً على رقم اليوم الحالي في الشهر
+        const currentDay = new Date().getDate();
+        const selectedTool = dailyTools[currentDay % dailyTools.length];
+
+        // حقن الأداة بداخل كارت اليوم المميز
+        document.getElementById("featured-card").innerHTML = `
+            <span class="badge">${selectedTool.category}</span>
+            <h2>${selectedTool.name}</h2>
+            <div class="rating">${selectedTool.rating}</div>
+            <p>${selectedTool.desc}</p>
+            <a href="${selectedTool.link}" class="review-link">تجرّب أداة اليوم من هنا</a>
+        `;
+    </script>
+</body>
+</html>
         }
 
         /* شبكة كروت المراجعات */
